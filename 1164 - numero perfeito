@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+int main(){
+  int contador, i, num, sum;
+
+  scanf("%d", &contador);
+
+  while(contador > 0){
+    scanf("%d", &num);
+    i = 1;
+    sum = 0;
+
+    while(i < num){
+      
+      if(num % i == 0){
+        sum = sum + i;
+        
+      }
+      i++;
+      
+    }
+    if(sum == num){
+      printf("%d eh perfeito\n", num);
+      
+    }else{
+      printf("%d nao eh perfeito\n", num);
+      
+    }
+    contador--;
+  }
+  return 0;
+}
