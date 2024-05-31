@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main (){
+  int a, b, quo, res;
+
+  scanf("%d %d", &a, &b);
+
+  quo = a/b;
+  res = a - quo*b;
+
+  if(res < 0 && b > 0){
+      quo--;
+      res = res + abs(b);
+  
+  }else if(res < 0 && b < 0){
+    quo++;
+    res = res + abs(b);
+    
+  }
+  
+  printf("%d %d\n", quo,res);
+
+  return 0;
+}
