@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+int main(){
+  int linhas, contador, num;
+
+  scanf("%d %d", &linhas, &num);
+  contador = 1;
+
+  while(contador <= num){
+    
+    if(contador % linhas == 0){
+      printf("%d\n", contador);
+      
+    }else{
+      printf("%d ", contador);
+      
+    }
+    contador++;
+  }
+  
+  return 0;
+}
