@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+int main(){
+  int contador, i, num;
+
+  scanf("%d", &contador);
+
+  while(contador > 0){
+    scanf("%d", &num);
+    i = 2;
+
+    while(i <= num){
+      
+      if(i == num){
+        printf("%d eh primo\n", num);
+        break;
+        
+      }else if(num % i == 0){
+        printf("%d nao eh primo\n", num);
+        break;
+      
+      }
+      i++;
+    }
+    contador--;
+  }
+  
+  return 0;
+}
