@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int xp, qntd, total;
+
+    while(0 == 0){
+        scanf("%d %d", &qntd, &xp);
+
+        if(xp == 0 && qntd == 0){
+            break;
+            
+        }else{
+            printf("%d\n", xp * qntd);
+
+        }
+    }
+    return 0;
+}
