@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int cod, qntd, contador;
+    double total;
+    total = 0;
+
+    scanf("%d", &contador);
+
+    for(; contador > 0; contador--){
+        scanf("%d %d", &cod, &qntd);
+
+        if(cod == 1001){
+            total = total + (1.50*qntd);
+            
+        }else if(cod == 1002){
+            total = total + (2.50*qntd);
+            
+        }else if(cod == 1003){
+            total = total + (3.50*qntd);
+
+        }else if(cod == 1004){
+            total = total + (4.50*qntd);
+
+        }else if(cod == 1005){
+            total = total + (5.50*qntd);
+
+        }
+    }
+    printf("%.2lf\n", total);
+    
+    return 0;
+}
