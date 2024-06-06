@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    double price, value, menor, grama;
+
+    scanf("%d", &n);
+    scanf("%lf %lf", &price, &grama);
+    value = (1000 * price)/grama;
+    menor = value;
+
+    for(int i = 2; i <= n; i++){
+        scanf("%lf %lf", &price, &grama);
+        value = (price * 1000)/grama;
+
+        if(value < menor){
+            menor = value;
+        }
+    }
+    printf("%.2lf\n", menor);
+    
+    return 0;
+}
