@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int x1, x2, y1, y2, x, y, total, counter, i;
+
+    scanf("%d %d %d %d", &x1, &y1, &x2, &y2);
+    i = 1;
+    
+    while(x1 != 0 && y1 != 0 && x2 != 0 && y2!= 0){
+        scanf("%d", &counter);
+        total = 0;
+        
+        for(; counter > 0; counter--){
+            scanf("%d %d", &x, &y);
+
+            if(x >= x1 && y <= y1 && x <= x2 && y >= y2){
+                total++;
+            }
+        }
+        printf("Teste %d\n", i++);
+        printf("%d\n", total);
+        scanf("%d %d %d %d", &x1, &y1, &x2, &y2);
+    }
+    return 0;
+}
