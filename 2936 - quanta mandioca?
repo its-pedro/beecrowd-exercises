@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main (){
+    int curupira, boitata, boto, manpinguari, iara, total;
+    total = 225;
+    
+    scanf("%d %d %d %d %d",&curupira, &boitata, &boto, &manpinguari, &iara);
+    
+    total = total + 300*curupira + 1500*boitata + 600*boto + manpinguari*1000 + iara*150;
+    
+    printf("%d\n", total);
+    
+    return 0;
+}
