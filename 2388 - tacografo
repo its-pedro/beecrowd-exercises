@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main (){
+    int speed, time, distance, n;
+
+    scanf("%d", &n);
+    distance = 0;
+    
+    for(int i = n; i > 0; i--){
+        scanf("%d %d", &time, &speed);
+        distance = distance + time*speed;
+        
+    }
+    printf("%d\n", distance);
+        
+    return 0;
+}
