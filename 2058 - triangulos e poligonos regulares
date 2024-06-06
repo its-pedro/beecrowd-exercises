@@ -1,0 +1,11 @@
+#include<stdio.h>
+
+int main (){
+    int lados;
+
+    scanf("%d", &lados);
+    lados-=2;
+    printf("%d\n", lados);
+
+    return 0;
+}
