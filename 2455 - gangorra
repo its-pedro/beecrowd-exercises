@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main (){
+    int peso1, peso2, comp1, comp2, torque1, torque2;
+
+    scanf("%d %d %d %d", &peso1, &comp1, &peso2, &comp2);
+    torque1 = peso1 * comp1;
+    torque2 = peso2 * comp2;
+
+    if(torque1 == torque2){
+        printf("0\n");
+        
+    }else if(torque1 > torque2){
+        printf("-1\n");
+        
+    }else if(torque1 < torque2){
+        printf("1\n");
+        
+    }
+    return 0;
+}
