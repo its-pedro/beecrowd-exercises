@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include<math.h>
+
+int main () {
+    double sec; 
+    int year;
+
+    while(scanf("%d", &year) != EOF){
+        sec = year / 100.0;
+
+        if(year % 100 == 0){
+            printf("%.0lf\n", sec);
+            
+        }else{
+            printf("%.0lf\n", 1 + floor(sec));
+            
+        }
+    }
+    
+    return 0;
+}
