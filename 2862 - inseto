@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main (){
+    int n, num;
+
+    scanf("%d", &n);
+
+    while(n > 0){
+        scanf("%d", &num);
+
+        if(num > 8000){
+            printf("Mais de 8000!\n");
+            
+        }else{
+            printf("Inseto!\n");
+        }
+        
+        n--;
+    }
+    return 0;
+}
