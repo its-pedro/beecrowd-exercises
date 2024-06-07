@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main () {
+    int angulo_hora, angulo_minuto, minuto, hora;
+
+    while(scanf("%d %d", &angulo_hora, &angulo_minuto) != EOF){
+        hora = (angulo_hora * 12)/360;
+        minuto = (angulo_minuto * 60)/360;
+
+        printf("%02d:%02d\n", hora, minuto);
+    }
+    return 0;
+}
