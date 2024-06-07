@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main (){
+    int diferenca, zezinho, joao, total_z, total_j, n, counter;
+    counter = 1;
+    
+    scanf("%d", &n);
+
+    while(n != 0){
+        total_z = 0;
+        total_j = 0;
+
+        printf("Teste %d\n", counter);
+        
+        for(int i = 1; i <= n; i++){
+            scanf("%d %d", &joao, &zezinho);
+            total_z = total_z + zezinho;
+            total_j = total_j + joao;
+            diferenca = total_j - total_z;
+
+            printf("%d\n", diferenca);
+        }
+        printf("\n");
+        scanf("%d", &n);
+        counter++;
+    }
+    return 0;
+}
