@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main () {
+    int counter, hora, min, cod;
+
+    scanf("%d", &counter);
+
+    for(int i = counter; i > 0; i--){
+        scanf("%d %d %d", &hora, &min, &cod);
+
+        if(cod == 0){
+            printf("%02d:%02d - A porta fechou!\n", hora, min);
+            
+        }else if(cod == 1){
+            printf("%02d:%02d - A porta abriu!\n", hora, min);
+
+        }
+    }
+    return 0;
+}
