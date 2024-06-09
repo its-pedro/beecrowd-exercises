@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main () {
+    int tempo_0, t, tempo, counter, total;
+
+    scanf("%d", &counter);
+    scanf("%d", &tempo_0);
+    counter--;
+    total = 10;
+    
+    for (int i = counter; i > 0; i--){
+        scanf("%d", &t);
+        tempo = t - tempo_0;
+
+        if(tempo <= 10){
+            total = total + tempo;
+                
+        }else{
+            total = total + 10;
+            
+        }
+        tempo_0 = t;
+    }
+    printf("%d\n", total);
+    
+    return 0;
+}
