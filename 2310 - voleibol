@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main () {
+    int counter, serve, serve_1, block, block_1, atack, atack_1, serve_t, block_t, atack_t;
+    double percent_serve, percent_block, percent_atack;
+    char nome[10];
+    
+    serve_t = 0;
+    atack_t = 0;
+    block_t = 0;
+    percent_serve = 0;
+    percent_block = 0;
+    percent_atack = 0;
+    
+    scanf("%d", &counter);
+    
+    for(;counter > 0; counter--){
+        scanf("%s", nome);
+        scanf("%d %d %d", &serve, &block, &atack);
+        scanf("%d %d %d", &serve_1, &block_1, &atack_1);
+        
+        serve_t = serve_t + serve;
+        atack_t = atack_t + atack;
+        block_t = block_t + block;
+        percent_serve = percent_serve + serve_1;
+        percent_block = percent_block + block_1;
+        percent_atack = percent_atack + atack_1;
+
+    }
+    percent_serve = 100 * (percent_serve / serve_t);
+    percent_block = 100 * (percent_block / block_t);
+    percent_atack = 100 * (percent_atack / atack_t);
+
+    printf("Pontos de Saque: %.2lf %%.\n", percent_serve);
+    printf("Pontos de Bloqueio: %.2lf %%.\n", percent_block);
+    printf("Pontos de Ataque: %.2lf %%.\n", percent_atack);
+
+    return 0;
+}
