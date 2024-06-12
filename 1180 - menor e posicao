@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main (){
+    int p[1000], i, counter, menor, id_menor;
+    
+    scanf("%d", &counter);
+    scanf("%d", &p[0]);
+    menor = p[0];
+    id_menor = 0;
+
+    for(i = 1; i < counter; i++){
+        scanf("%d", &p[i]);
+
+        if(p[i] < menor){
+            menor = p[i];
+            id_menor = i;
+        }
+    }
+    printf("Menor valor: %d\n", menor);
+    printf("Posicao: %d\n", id_menor);
+    
+    return 0;
+}
