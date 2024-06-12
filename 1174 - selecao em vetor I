@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main (){
+    int counter;
+    double A[100], num;   
+
+    for(counter = 0; counter < 100; counter++){
+        scanf("%lf", &num);
+
+        if(num <= 10){
+            A[counter] = num;
+            printf("A[%d] = %.1lf\n", counter, num);
+        }
+    }
+    return 0;
+}
