@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main () {
+    int num;
+    char letra;
+
+    for(num = 97, letra = 'a'; num < 123; num++, letra++){
+        printf("%d e %c\n", num, letra);
+    }
+    return 0;
+}
