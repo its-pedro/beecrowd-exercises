@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main () {
+    int counter;
+    char in_put[100];
+
+    scanf("%d", &counter);
+
+    for(; counter > 0; counter--){
+        scanf("%s", in_put);
+        printf("gzuz\n");
+    }
+    return 0;
+}
