@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main () {
+    int tempo_r, tempo_a, tempo_b;
+
+    scanf("%d", &tempo_r);
+    scanf("%d %d", &tempo_a, &tempo_b);
+
+    if(tempo_r >= tempo_a + tempo_b){
+        printf("Farei hoje!\n");
+    }else{
+        printf("Deixa para amanha!\n");
+    }
+    
+    return 0;
+}
