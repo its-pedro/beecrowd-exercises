@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main () {
+    int line, collum;
+
+    scanf("%d %d", &line, &collum);
+
+    if((line + collum) % 2 == 0){
+        printf("1\n");
+    }else{
+        printf("0\n");
+    }
+    
+    return 0;
+}
