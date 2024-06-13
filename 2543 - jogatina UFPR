@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main () {
+    int id, counter, cod, id_fixo, out_put;
+
+    while(scanf("%d %d", &counter, &id_fixo) != EOF){
+        out_put = 0;
+        
+        for(; counter > 0; counter--){
+            scanf("%d %d", &id, &cod);
+    
+            if(id == id_fixo){
+                if(cod == 0){
+                    out_put++;
+                }
+            }
+        }
+        printf("%d\n", out_put);
+    }
+    return 0;
+}
