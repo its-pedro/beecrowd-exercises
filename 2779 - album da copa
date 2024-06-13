@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main () {
+    int total[101], max, counter, fig, soma;
+    soma = 0;
+    
+    scanf("%d %d", &max, &counter);
+
+    for(int i = 1; i <= max; i++){
+        total[i] = 0;
+    }
+    
+    for(; counter > 0; counter--){
+        scanf("%d", &fig);
+        total[fig] = 1;
+    }
+    
+    for(int j = 1; j <= max; j++){
+        soma = soma + total[j];
+    }
+    printf("%d\n", max - soma);
+    
+    return 0;
+}
