@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main () {
+    int laj_1, laj_2, L, H;
+    scanf("%d %d", &L, &H);
+
+    laj_1 = L * H + (L - 1)*(H - 1);
+    laj_2 = 2 * (L - 1) + 2 * (H - 1);
+
+    printf("%d\n%d\n", laj_1, laj_2);
+    
+    return 0;
+}
