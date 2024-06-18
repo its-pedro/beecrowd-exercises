@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+  int pecas, maq_max, maq_min, lav_max, lav_min;
+
+  scanf("%d", &pecas);
+  scanf("%d %d", &maq_min, &maq_max);
+  scanf("%d %d", &lav_min, &lav_max);
+  
+  if(maq_min <= pecas && maq_max >= pecas && lav_min <= pecas && lav_max >= pecas){
+    printf("possivel\n");
+  }else{
+    printf("impossivel\n");
+  }
+  return 0;
+}
