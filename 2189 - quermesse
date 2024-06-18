@@ -1,0 +1,26 @@
+#include <stdio.h>
+#define i_max 10001
+
+int main() {
+  int pessoa[i_max], counter, total, winner,i;
+  i = 1;
+  
+  while(2 == 2){
+    scanf("%d", &total);
+    if(total == 0){
+      break;
+    }
+    
+    for(counter = 1; counter <= total; counter++){
+      scanf("%d", &pessoa[counter]);
+
+      if(pessoa[counter] == counter){
+        winner = counter;
+      }
+    }
+    printf("Teste %d\n", i);
+    printf("%d\n\n", winner);
+    i++;
+  }
+  return 0;
+}
