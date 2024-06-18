@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+  int counter, num_1, num_2, play_1, play_2;
+  while(0 == 0){  
+    scanf("%d", &counter);
+    if(counter == 0){
+      break;
+    }
+    play_1 = 0;
+    play_2 = 0;
+
+    for(; counter > 0; counter--){
+      scanf("%d %d", &num_1, &num_2);
+
+      if(num_1 > num_2){
+        play_1++;
+      }else if(num_2 > num_1){
+        play_2++;
+      }
+    }
+    printf("%d %d\n", play_1, play_2);
+  }
+  return 0;
+}
