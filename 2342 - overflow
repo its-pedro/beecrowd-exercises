@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+  int over_flow, num_1, num_2;
+  char code;
+
+  scanf("%d", &over_flow);
+  scanf("%d %c %d", &num_1, &code, &num_2);
+
+  if(code == '+'){
+    if(num_1 + num_2 <= over_flow){
+      printf("OK\n");
+    }else{
+      printf("OVERFLOW\n");
+    }
+  }else if(code == '*'){
+    if(num_1 * num_2 <= over_flow){
+      printf("OK\n");
+    }else{
+      printf("OVERFLOW\n");
+    }
+  }
+  return 0;
+}
