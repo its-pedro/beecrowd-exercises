@@ -1,0 +1,29 @@
+#include <stdio.h>
+#define i_max 10000
+
+int main() {
+  int counter, counter_max, num[i_max], i, j;
+
+  scanf("%d", &i);
+  scanf("%d", &num[0]);
+  i--;
+  counter = 1;
+  counter_max = 1;
+
+  for(j = 1; j <= i; j++){
+    scanf("%d", &num[j]);
+
+    if(num[j] == num[j - 1]){
+      counter++;
+      
+      if(counter > counter_max){
+        counter_max = counter;
+      }
+    }else{
+      counter = 1;
+    }
+  }
+  printf("%d\n", counter_max);
+  
+  return 0;
+}
