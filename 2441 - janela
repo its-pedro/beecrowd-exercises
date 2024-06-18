@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int main() {
+  int p_a1, p_a2, p_a3, l_a1, l_a2, l_a3, area_livre, p1, p2, p3;
+
+  scanf("%d %d %d", &p1, &p2, &p3);
+
+  if(p1 >= p2 && p1 >= p3 && p2 >= p3){
+    p_a3 = p1;
+    p_a2 = p2;
+    p_a1 = p3;
+    
+  }else if(p1 >= p2 && p1 >= p3 && p2 <= p3){
+    p_a3 = p1;
+    p_a2 = p3;
+    p_a1 = p2;
+    
+  }else if(p2 >= p1 && p2 >= p3 && p1 <= p3){
+    p_a3 = p2;
+    p_a2 = p3;
+    p_a1 = p1;
+    
+  }else if(p2 >= p1 && p2 >= p3 && p1 >= p3){
+    p_a3 = p2;
+    p_a2 = p1;
+    p_a1 = p3;
+    
+  }else if(p2 <= p1 && p2 <= p3 && p1 <= p3){
+    p_a3 = p3;
+    p_a2 = p1;
+    p_a1 = p2;
+    
+  }else if(p3 >= p1 && p2 <= p3 && p1 <= p3){
+    p_a3 = p3;
+    p_a2 = p2;
+    p_a1 = p1;
+  }
+  
+  if(p_a1 + 200 > p_a2){
+    l_a1 = p_a2 - p_a1;
+  }else{
+    l_a1 = 200;
+  }
+
+  if(p_a2 + 200 > p_a3){
+    l_a2 = p_a3 - p_a2;
+  }else{
+    l_a2 = 200;
+  }
+  l_a3 = 200;
+  
+  area_livre = 60000 - ((l_a1 * 100) + (l_a2 * 100) + (l_a3 * 100));
+  printf("%d\n", area_livre);
+  
+  return 0;
+}
