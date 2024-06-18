@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+  int counter, divisa_x, divisa_y, x, y;
+  
+  while(0 == 0){
+    scanf("%d", &counter);
+    if(counter == 0){
+      break;
+    }
+    scanf("%d %d", &divisa_x, &divisa_y);
+
+    for(; counter > 0; counter--){
+      scanf("%d %d", &x, &y);
+
+      if(x > divisa_x && y > divisa_y){
+        printf("NE\n");
+        
+      }else if(x < divisa_x && y > divisa_y){
+        printf("NO\n");
+
+      }else if(x < divisa_x && y < divisa_y){
+        printf("SO\n");
+
+      }else if(x > divisa_x && y < divisa_y){
+        printf("SE\n");
+
+      }else if(x == divisa_x || y == divisa_y){
+        printf("divisa\n");
+
+      }
+    }
+  }
+  return 0;
+}
