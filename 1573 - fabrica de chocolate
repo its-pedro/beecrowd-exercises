@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+  int altura, largura, profundidade, area, area_c, lado_c;
+
+  while(0 == 0){
+    scanf("%d %d %d", &altura, &largura, &profundidade);
+    lado_c = 1;
+    if(largura == 0 && profundidade == 0 && altura == 0){
+      break;
+    }
+    area = altura * largura * profundidade;
+    
+    while(0 == 0){
+      lado_c++;
+      
+      if(lado_c*lado_c*lado_c > area){
+        lado_c--;
+        printf("%d\n", lado_c);
+        break;
+        
+      }else if(lado_c*lado_c*lado_c == area){
+        printf("%d\n", lado_c);
+        break;
+      }
+    }
+  }
+  return 0;
+}
