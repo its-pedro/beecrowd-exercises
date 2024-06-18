@@ -1,0 +1,15 @@
+#include <stdio.h>
+ 
+int main() {
+    int L, R, sum;
+    
+    while(0 == 0){
+        scanf("%d %d", &L, &R);
+        if(L == 0 && R == 0){
+            break;
+        }
+        sum = L + R;
+        printf("%d\n", sum);
+    }
+    return 0;
+}
