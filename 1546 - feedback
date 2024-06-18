@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+  int day, counter, feedback;
+  scanf("%d", &day);
+  
+  for(; day > 0; day--){
+    scanf("%d", &counter);
+
+    for(; counter > 0; counter--){
+      scanf("%d", &feedback);
+
+      if(feedback == 1){
+        printf("Rolien\n");
+        
+      }else if(feedback == 2){
+        printf("Naej\n");
+        
+      }else if(feedback == 3){
+        printf("Elehcim\n");
+        
+      }else if(feedback == 4){
+        printf("Odranoel\n");
+      }
+    }
+  }
+  return 0;
+}
