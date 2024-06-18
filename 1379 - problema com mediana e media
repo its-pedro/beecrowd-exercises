@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+  int A, B, media, mediana, C;
+  
+  scanf("%d %d", &A, &B);
+  while(A != 0 && B != 0){
+  
+    if(A > B){
+      mediana = B;
+    }else{
+      mediana = A;
+    }
+  
+    C = (3 * mediana) - A - B;
+    printf("%d\n", C);
+    scanf("%d %d", &A, &B);
+  }
+  return 0;
+}
