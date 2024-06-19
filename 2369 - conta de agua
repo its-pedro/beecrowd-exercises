@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+  int consumo, total;
+  scanf("%d", &consumo);
+
+  total = 7;
+  consumo = consumo - 10;
+
+  if(consumo >= 20){
+    total = total + 20;
+    consumo = consumo - 20;
+
+    if(consumo >= 70){
+      total = total + 140;
+      consumo = consumo - 70;
+
+      if(consumo > 0){
+        total = total + (consumo * 5);
+      }
+      
+    }else if (consumo > 0){
+      total = total + (consumo * 2);
+    }
+    
+  }else if (consumo > 0){
+    total = total + consumo;
+  }
+  printf("%d\n", total);
+  
+  return 0;
+}
