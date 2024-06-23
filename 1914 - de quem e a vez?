@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+  int counter, num_1, num_2, soma;
+  char play_1[100], play_2[100], escolha_1[10], escolha_2[10];
+
+  scanf("%d", &counter);
+  
+  for(; counter > 0; counter--){
+    scanf("%s %s %s %s", play_1, escolha_1, play_2, escolha_2);
+    scanf("%d %d", &num_1, &num_2);
+    soma = num_1 + num_2;
+
+    if(soma % 2 == 0 && strcmp("PAR", escolha_1) == 0){
+      printf("%s\n", play_1);
+
+    }else if(soma % 2 != 0 && strcmp("IMPAR", escolha_1) == 0){
+      printf("%s\n", play_1);
+
+    }else{
+      printf("%s\n", play_2);
+    }
+  }
+  return 0;
+}
