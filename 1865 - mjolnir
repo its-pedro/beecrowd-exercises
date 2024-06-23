@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+  int counter, force;
+  char hero[30];
+  
+  scanf("%d", &counter);
+
+  for(; counter > 0; counter--){
+    scanf("%s %d", hero, &force);
+
+    if(strcmp("Thor", hero) == 0){
+      printf("Y\n");
+    }else{
+      printf("N\n");
+    }
+  }
+  return 0;
+}
