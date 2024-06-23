@@ -1,0 +1,20 @@
+#include<stdio.h>
+#define n_max 101
+
+int main(){
+  int algoz[n_max], min, pos_min, num;
+  scanf("%d", &num);
+  min = 20;
+
+  for(int counter = 1; counter <= num; counter++){
+    scanf("%d", &algoz[counter]);
+
+    if(algoz[counter] < min){
+      min = algoz[counter];
+      pos_min = counter;
+    }
+  }
+  printf("%d\n", pos_min);
+  
+  return 0;
+}
