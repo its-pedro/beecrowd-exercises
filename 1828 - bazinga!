@@ -1,0 +1,70 @@
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+  int num, counter;
+  char sheldon[10], raj[10];
+  scanf("%d", &num);
+  
+  for(counter = 1; counter <= num; counter++){
+    scanf("%s %s", sheldon, raj);
+
+    if(strcmp("tesoura", sheldon) == 0){
+      if(strcmp("papel", raj) == 0 || strcmp("lagarto", raj) == 0){
+        printf("Caso #%d: Bazinga!\n", counter);
+        
+      }else if(strcmp("Spock", raj) == 0 || strcmp("pedra", raj) == 0){
+        printf("Caso #%d: Raj trapaceou!\n", counter);
+
+      }else if(strcmp("tesoura", raj) == 0){
+        printf("Caso #%d: De novo!\n", counter);
+
+      }
+    }else if(strcmp("pedra", sheldon) == 0){
+      if(strcmp("tesoura", raj) == 0 || strcmp("lagarto", raj) == 0){
+        printf("Caso #%d: Bazinga!\n", counter);
+
+      }else if(strcmp("Spock", raj) == 0 || strcmp("papel", raj) == 0){
+        printf("Caso #%d: Raj trapaceou!\n", counter);
+
+      }else if(strcmp("pedra", raj) == 0){
+        printf("Caso #%d: De novo!\n", counter);
+
+      }
+    }else if(strcmp("papel", sheldon) == 0){
+      if(strcmp("Spock", raj) == 0 || strcmp("pedra", raj) == 0){
+        printf("Caso #%d: Bazinga!\n", counter);
+
+      }else if(strcmp("tesoura", raj) == 0 || strcmp("lagarto", raj) == 0){
+        printf("Caso #%d: Raj trapaceou!\n", counter);
+
+      }else if(strcmp("papel", raj) == 0){
+        printf("Caso #%d: De novo!\n", counter);
+
+      }
+    }else if(strcmp("Spock", sheldon) == 0){
+      if(strcmp("pedra", raj) == 0 || strcmp("tesoura", raj) == 0){
+        printf("Caso #%d: Bazinga!\n", counter);
+
+      }else if(strcmp("papel", raj) == 0 || strcmp("lagarto", raj) == 0){
+        printf("Caso #%d: Raj trapaceou!\n", counter);
+
+      }else if(strcmp("Spock", raj) == 0){
+        printf("Caso #%d: De novo!\n", counter);
+
+      }
+    }else if(strcmp("lagarto", sheldon) == 0){
+      if(strcmp("Spock", raj) == 0 || strcmp("papel", raj) == 0){
+        printf("Caso #%d: Bazinga!\n", counter);
+
+      }else if(strcmp("tesoura", raj) == 0 || strcmp("pedra", raj) == 0){
+        printf("Caso #%d: Raj trapaceou!\n", counter);
+
+      }else if(strcmp("lagarto", raj) == 0){
+        printf("Caso #%d: De novo!\n", counter);
+
+      }
+    }
+  }
+  return 0;
+}
