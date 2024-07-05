@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#define N_MAX 50
+
+int main (){
+    int jump, cases, size;
+    char str[N_MAX + 1];
+
+    scanf("%d", &cases);
+
+    for(; cases > 0; cases--){
+        scanf("%s", str);
+        scanf("%d", &jump);
+
+        size = strlen(str);
+
+        for(int i = 0; i < size; i++){
+            str[i] = str[i] - jump;
+
+            if(str[i] < 65){
+                str[i] = str[i] + 26;
+            }
+        }
+        printf("%s\n", str);
+    }
+
+    return 0;
+}
