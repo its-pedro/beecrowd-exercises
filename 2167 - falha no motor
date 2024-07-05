@@ -1,0 +1,23 @@
+#include <stdio.h>
+#define N_MAX 101
+
+int main (){
+    int counter, values, rotation[N_MAX], outPut, dif;
+
+    scanf("%d", &values);
+    rotation[0] = 0;
+    outPut = 0;
+
+    for(counter = 1; counter <= values; counter++){
+        scanf("%d", &rotation[counter]);
+        dif = rotation[counter] - rotation[counter - 1];
+
+        if(dif < 0){
+            outPut = counter;
+            break;
+        }
+    }
+    printf("%d\n", outPut);
+
+    return 0;
+}
