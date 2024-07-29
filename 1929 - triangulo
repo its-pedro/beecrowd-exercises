@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+char answer (int ladoA, int ladoB, int ladoC){
+  if(ladoA < ladoB + ladoC && ladoA > abs(ladoB - ladoC)){
+    return 'S';
+  }else if(ladoB < ladoC + ladoA && ladoB > abs(ladoC - ladoA)){
+    return 'S';
+  }else if(ladoC < ladoA + ladoB && ladoC > abs(ladoA - ladoB)){
+    return 'S';
+  }else{
+    return 'N';
+  }
+}
+int main (){
+  int num[4], i;
+  char resp;
+
+  for(i = 0; i < 4; i++){
+    scanf("%d", &num[i]);
+  }
+  resp = answer(num[0], num[1], num[2]);
+  if(resp == 'S'){
+    printf("%c\n", resp);
+    
+  }else{
+    resp = answer(num[0], num[1], num[3]);
+    if(resp == 'S'){
+      printf("%c\n", resp);
+      
+    }else{
+      resp = answer(num[0], num[2], num[3]);
+      if(resp == 'S'){
+        printf("%c\n", resp);
+        
+      }else{
+        resp = answer(num[1], num[2], num[3]);
+        if(resp == 'S'){
+          printf("%c\n", resp);
+
+        }else{
+          printf("%c\n", resp);
+        }
+      }
+    }
+  }
+  return 0;
+}
