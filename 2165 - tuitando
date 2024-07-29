@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<string.h>
+#define N_MAX 500
+ 
+int main (){
+  char tweet[N_MAX+1];
+
+  scanf("%[^\n]s", tweet);
+
+  if(strlen(tweet) <= 140)
+    printf("TWEET\n");
+  else
+    printf("MUTE\n");
+  
+  return 0;
+}
