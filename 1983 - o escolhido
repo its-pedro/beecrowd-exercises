@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+int main (){
+  int mat, cases, matMax;
+  double grade, gradeMax;
+
+  scanf("%d", & cases);
+  gradeMax = 7.9;
+  matMax = 0;
+  
+  while(cases > 0){
+    scanf("%d %lf", &mat, &grade);
+  
+    if(grade > gradeMax){
+      matMax = mat;
+      gradeMax = grade;
+    }
+    cases--;
+  }
+  if(matMax == 0){
+    printf("Minimum note not reached\n");
+  }else{
+    printf("%d\n", matMax);
+  }
+  return 0;
+}
