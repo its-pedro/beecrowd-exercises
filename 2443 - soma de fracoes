@@ -1,0 +1,40 @@
+#include<stdio.h>
+ 
+int main (){
+  int num1, num2, den1, den2, numo, deno, den, num, i;
+
+  scanf("%d %d %d %d", &num1, &den1, &num2, &den2);
+
+  if(den1 == den2){
+    numo = num1 + num2;
+    deno = den1;
+  }else{
+    deno = den1*den2;
+    numo = den1*num2 + den2*num1;
+  }
+
+  if(numo % deno == 0){
+    numo = numo/deno;
+    deno = 1;
+  }
+
+  if(numo >= deno){
+    for(i = deno, num = numo, den = deno; i > 1; i--){
+      if(num % i == 0 && den % i == 0){
+        num = num / i;
+        den = den / i;
+      }
+    }
+  }else{
+    for(i = numo, num = numo, den = deno; i > 1; i--){
+      if(num % i == 0 && den % i == 0){
+        num = num / i;
+        den = den / i;
+      }
+    }
+  }
+  
+  printf("%d %d\n", num, den);
+
+  return 0;
+}
