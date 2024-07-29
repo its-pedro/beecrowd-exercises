@@ -1,0 +1,32 @@
+#include<stdio.h>
+long long int year (long long int ano){
+  long long int passed;
+
+  if(ano > 2014){
+    passed = 2014 - ano;
+  }else{
+    passed = 2015 - ano;
+  }
+  return passed;
+}
+
+int main (){
+  long long int ano, passed;
+  int cases;
+
+  scanf("%d", &cases);
+
+  while(cases > 0){
+    scanf("%lld", &ano);
+    passed = year(ano);
+
+    if(passed < 0){
+      passed = passed * (-1);
+      printf("%lld A.C.\n", passed);
+    }else{
+      printf("%lld D.C.\n", passed);
+    }
+    cases--;
+  }
+  return 0;
+}
