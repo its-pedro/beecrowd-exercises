@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+ 
+int main (){
+  int skilLevel[4], diference, i, j, aux;
+
+  for(i = 0; i < 4; i++){
+    scanf("%d", skilLevel+i);
+  }
+  
+  for(i = 0; i < 4; i++){
+    for(j = i+1; j < 4; j++){
+      if(skilLevel[j] < skilLevel[i]){
+        aux = skilLevel[i];
+        skilLevel[i] = skilLevel[j];
+        skilLevel[j] = aux;
+      }
+    }
+  }
+  
+  for(diference = 0, i = 0; i < 4; i++){
+    if(i == 1 || i == 2){
+      diference = diference - skilLevel[i];
+    }else{
+      diference = diference + skilLevel[i];
+    }
+  }
+  printf("%d\n", abs(diference));
+  
+  return 0;
+}
