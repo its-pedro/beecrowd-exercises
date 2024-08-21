@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 20
+
+struct Kids{
+  char comportamento;
+  char nome[MAX+1];
+};
+
+typedef struct Kids kids;
+
+void ordemAlfabetica(kids *lista, int qntd){
+  int i, j;
+  kids aux;
+
+  for(i = 0; i < qntd-1; i++){
+    for(j = i+1; j < qntd; j++){
+      if(strcmp(lista[i].nome, lista[j].nome) > 0){
+        aux = lista[i];
+        lista[i] = lista[j];
+        lista[j] = aux;
+      }
+    }
+  }
+}
+
+void imprimeLista(kids *lista, int bom, int mal){
+  int i;
+
+  for(i = 0; i < mal+bom; i++){
+    printf("%s\n", lista[i].nome);
+  }
+  printf("Se comportaram: %d | Nao se comportaram: %d\n", bom, mal);
+}
+
+int main(){
+  int cases, i, bad, good;
+  
+  scanf("%d", &cases);
+  getchar();
+  kids* lista = (kids*) malloc(sizeof(kids)*cases);
+
+  for(i = 0, bad = 0, good = 0; i < cases; i++){
+    scanf("%c %s", &lista[i].comportamento, lista[i].nome);
+    getchar();
+
+    if(lista[i].comportamento == '+'){
+      good++;
+    }else{
+      bad++;
+    }
+  }
+  ordemAlfabetica(lista, cases);
+  imprimeLista(lista, good, bad);
+  
+  return 0;
+}
