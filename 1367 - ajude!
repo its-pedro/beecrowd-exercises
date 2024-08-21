@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define Alphabet 26
+
+struct Question {
+  char code;
+  int time;
+  char result[10];
+};
+
+typedef struct Question question;
+
+int main() {
+  int quest[Alphabet], cases, i, time, qntd, incorrect[Alphabet], j;
+
+  while(0 == 0){
+    scanf("%d", &cases);
+    getchar();
+    if(cases == 0){
+      break;
+    }
+    question *submission = (question *) malloc(sizeof(question)*(cases));
+    for(i = 0; i < Alphabet; i++){
+      quest[i] = 0;
+      incorrect[i] = 0;
+    }
+
+    for(i = 0, time = 0, qntd = 0; i < cases; i++){
+      scanf("%c %d %s", &submission[i].code, &submission[i].time, submission[i].result);
+      getchar();
+      int num = submission[i].code - 65; 
+
+      if(strcmp(submission[i].result, "correct") == 0){  
+        if(quest[num] == 0){
+          quest[num] = submission[i].time;
+          qntd++;
+          time += submission[i].time;
+          if(incorrect[num] != 0){
+            time += 20 * incorrect[num];
+          }
+        }else if(quest[num] > submission[i].time){
+          time -= quest[num];
+          quest[num] = submission[i].time;
+          time += submission[i].time; 
+        } 
+      }else if(strcmp(submission[i].result, "incorrect") == 0){
+        incorrect[num]++;
+      }
+    }
+    printf("%d %d\n", qntd, time);
+    free(submission);
+  }
+  return 0;
+}
