@@ -1,0 +1,40 @@
+#include <stdio.h>
+#define MAX 100
+  
+int main() {
+  int farm[MAX][MAX], i, j, line, colunm, sum, max;
+
+  scanf("%d %d", &line, &colunm);
+  max = 0;
+
+  for(i = 0; i < line; i++){
+    for(j = 0; j < colunm; j++){
+      scanf("%d", &farm[i][j]);
+    }
+  }
+
+  //soma das linhas
+  for(i = 0; i < line; i++){
+    sum = 0;
+    for(j = 0; j < colunm; j++){
+      sum += farm[i][j];
+    }
+    if(sum > max){
+      max = sum;
+    }
+  }
+
+  //soma das colunas
+  for(j = 0; j < colunm; j++){
+    sum = 0;
+    for(i = 0; i < line; i++){
+      sum += farm[i][j];
+    }
+    if(sum > max){
+      max = sum;
+    }
+  }
+  printf("%d\n", max);
+  
+  return 0;
+}
