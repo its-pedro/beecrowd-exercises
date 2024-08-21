@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define L_MAX 50
+
+struct Alunos {
+  char name[L_MAX+1];
+  char sign[L_MAX+1];
+};
+
+typedef struct Alunos alunos;
+
+int assinaturaFalsa(alunos *quadro, alunos dia, int qntd){
+  int falso = 0, i, pos, size, erro;
+
+  for(i = 0; i < qntd; i++){
+    if(strcmp(quadro[i].name, dia.name) == 0){
+      pos = i;
+      break;
+    }
+  }
+  size = strlen(dia.sign);
+
+  for(i = 0, erro = 0; i < size; i++){
+    if(quadro[pos].sign[i] != dia.sign[i]){
+      erro++;
+    }
+  }
+  
+  if(erro > 1){
+    falso = 1;
+  }
+  
+  return falso;
+}
+
+int main() {
+  int aluno, FAKE, aula, i;
+
+  while(0 == 0){
+    FAKE = 0;
+    scanf("%d", &aluno);
+    getchar();
+    if(aluno == 0){
+      break;
+    }
+    alunos *board = (alunos *) malloc(sizeof(alunos)*aluno);
+
+    for(i = 0; i < aluno; i++){
+      scanf("%s %s", board[i].name, board[i].sign);
+      getchar();
+    }
+
+    scanf("%d", &aula);
+    getchar();
+
+    alunos *presence = (alunos *) malloc(sizeof(alunos)*aula);
+
+    for(i = 0; i < aula; i++){
+      scanf("%s %s", presence[i].name, presence[i].sign);
+      getchar();
+
+      FAKE += assinaturaFalsa(board, presence[i], aluno);
+    }
+    printf("%d\n", FAKE);
+
+    free(board);
+    free(presence);
+  }
+  return 0;
+}
