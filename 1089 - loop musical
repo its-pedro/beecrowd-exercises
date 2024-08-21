@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int qntdPicos(int *amostra, int cases){
+  int picos, i;
+
+  for(i = 1, picos = 0; i <= cases; i++){
+    if(amostra[i] > amostra[i+1] && amostra[i] > amostra[i-1]){
+      picos++;
+    }else if(amostra[i] < amostra[i+1] && amostra[i] < amostra[i-1]){
+      picos++;
+    }
+  }
+  
+  return picos;
+}
+
+int main() {
+  int picos, cases, i;
+
+  while(0 == 0){
+    scanf("%d", &cases);
+    if(cases == 0){
+      break;
+    }
+
+    int *sample = (int *) malloc(sizeof(int)*(cases+2)); 
+
+    for(i = 0; i < cases; i++){
+      scanf("%d", &sample[i]);
+    }
+    sample[cases] = sample[0];
+    sample[cases+1] = sample[1];
+
+    picos = qntdPicos(sample, cases);
+    printf("%d\n", picos);
+    free(sample);
+  }
+  return 0;
+}
