@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define N_MAX 10
+
+int main(){
+  int cases, actions, pos, i;
+  char ordem[N_MAX];
+
+  scanf("%d", &cases);
+  getchar();
+  
+  while(cases > 0){
+    scanf("%d", &actions);
+    getchar();
+    pos = 0;
+    i = 0;
+    int *lastAction = (int*) malloc(sizeof(int)*(actions));
+
+    while(actions > 0){
+      scanf("%[^\n]s", ordem);
+      getchar();
+
+      if(strcmp(ordem, "LEFT") == 0){
+        pos--;
+        lastAction[i] = -1;
+        
+      }else if(strcmp(ordem, "RIGHT") == 0){
+        pos++;
+        lastAction[i] = 1;
+      
+      }else{
+        if(ordem[9] == '\0'){
+          pos += lastAction[ordem[8] - 49];
+          lastAction[i] = lastAction[ordem[8] - 49];
+          
+        }else{
+          pos += lastAction[10*(ordem[8] - 48)+(ordem[9] - 49)];
+          lastAction[i] = lastAction[10*(ordem[8] - 48)+(ordem[9] - 49)];
+        }  
+      }
+      i++;
+      actions--;
+    }
+    printf("%d\n", pos);
+    free(lastAction);
+    cases--;
+  }
+  return 0;
+}
